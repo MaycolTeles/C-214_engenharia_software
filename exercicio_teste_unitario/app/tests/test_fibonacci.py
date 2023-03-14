@@ -2,7 +2,6 @@
 Module to test the "main()" function.
 """
 
-from inspect import signature
 from unittest import TestCase
 
 from src.fibonacci import calculate_fibonacci
