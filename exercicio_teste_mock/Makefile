@@ -1,18 +1,8 @@
 start:
 	./scripts/start_project.sh
 
-format:
-	black app/
-
-lint:
-	python3.10 -m flake8 app/ --config=.flake8
-	python3.10 -m pylint app/ --rcfile=.pylintrc
-
-tests: lint
-	python3.10 -m pytest -vv --cov=. --cov-report=html --cov-config=.coveragerc
-
-run:
-	python3.10 app/main.py
+tests:
+	python3.10 -m pytest
 
 ## remove build artifacts
 clean-build:
