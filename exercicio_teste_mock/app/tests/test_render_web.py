@@ -141,7 +141,7 @@ class TestRenderWeb(TestCase):
 
     # BAD SCENARIOS
     @patch("app.src.render_web.get_data_from_api")
-    def test_shouldreturn_None_when_api_return_empty_list(self, mock_api_data: MagicMock) -> None:
+    def test_should_return_None_when_api_return_empty_list(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is returning None
         when the API returns an empty list.
@@ -155,7 +155,7 @@ class TestRenderWeb(TestCase):
         self.assertIsNone(actual)
 
     @patch("app.src.render_web.get_data_from_api")
-    def test_shouldreturn_None_when_api_return_missing_data(self, mock_api_data: MagicMock) -> None:
+    def test_should_return_None_when_api_return_missing_data(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is returning None
         when the API returns a list with missing data.
@@ -176,7 +176,7 @@ class TestRenderWeb(TestCase):
         self.assertIsNone(actual)
 
     @patch("app.src.render_web.get_data_from_api")
-    def test_shouldreturn_None_when_api_return_broken_data(self, mock_api_data: MagicMock) -> None:
+    def test_should_return_None_when_api_return_broken_data(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is returning None
         when the API returns a list with broken data.
