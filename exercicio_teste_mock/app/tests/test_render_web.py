@@ -139,6 +139,171 @@ class TestRenderWeb(TestCase):
 
         mock_api_data.assert_called_once()
 
+    @patch("app.src.render_web.get_data_from_api")
+    def test_should_get_right_building_for_classroom_equals_to_6(self, mock_api_data: MagicMock) -> None:
+        """
+        Method to assert the render_web function is setting the data correctly
+        by assigning the building value correctly.
+        """
+        fake_return = [
+            {
+                "nomeDoProfessor": "Chris",
+                "horarioDeAtendimento": "19:30",
+                "periodo": "noturno",
+                "sala": "6",
+                "predio": ["1", "2", "3", "4"]
+            },
+        ]
+
+        mock_api_data.return_value = fake_return
+
+        actual = render_web()
+        expected = [
+            {
+                "nomeDoProfessor": "Chris",
+                "horarioDeAtendimento": "19:30",
+                "periodo": "noturno",
+                "sala": "6",
+                "predio": "2"
+            },
+        ]
+
+        self.assertListEqual(actual, expected)
+
+        mock_api_data.assert_called_once()
+
+    @patch("app.src.render_web.get_data_from_api")
+    def test_should_get_right_building_for_classroom_equals_to_13(self, mock_api_data: MagicMock) -> None:
+        """
+        Method to assert the render_web function is setting the data correctly
+        by assigning the building value correctly.
+        """
+        fake_return = [
+            {
+                "nomeDoProfessor": "Chris",
+                "horarioDeAtendimento": "19:30",
+                "periodo": "noturno",
+                "sala": "13",
+                "predio": ["1", "2", "3", "4"]
+            },
+        ]
+
+        mock_api_data.return_value = fake_return
+
+        actual = render_web()
+        expected = [
+            {
+                "nomeDoProfessor": "Chris",
+                "horarioDeAtendimento": "19:30",
+                "periodo": "noturno",
+                "sala": "13",
+                "predio": "3"
+            },
+        ]
+
+        self.assertListEqual(actual, expected)
+
+        mock_api_data.assert_called_once()
+
+    @patch("app.src.render_web.get_data_from_api")
+    def test_should_get_right_building_for_classroom_equals_to_16(self, mock_api_data: MagicMock) -> None:
+        """
+        Method to assert the render_web function is setting the data correctly
+        by assigning the building value correctly.
+        """
+        fake_return = [
+            {
+                "nomeDoProfessor": "Chris",
+                "horarioDeAtendimento": "19:30",
+                "periodo": "noturno",
+                "sala": "16",
+                "predio": ["1", "2", "3", "4"]
+            },
+        ]
+
+        mock_api_data.return_value = fake_return
+
+        actual = render_web()
+        expected = [
+            {
+                "nomeDoProfessor": "Chris",
+                "horarioDeAtendimento": "19:30",
+                "periodo": "noturno",
+                "sala": "16",
+                "predio": "4"
+            },
+        ]
+
+        self.assertListEqual(actual, expected)
+
+        mock_api_data.assert_called_once()
+
+    @patch("app.src.render_web.get_data_from_api")
+    def test_should_get_right_building_for_classroom_equals_to_23(self, mock_api_data: MagicMock) -> None:
+        """
+        Method to assert the render_web function is setting the data correctly
+        by assigning the building value correctly.
+        """
+        fake_return = [
+            {
+                "nomeDoProfessor": "Chris",
+                "horarioDeAtendimento": "19:30",
+                "periodo": "noturno",
+                "sala": "23",
+                "predio": ["1", "2", "3", "4", "5", "6"]
+            },
+        ]
+
+        mock_api_data.return_value = fake_return
+
+        actual = render_web()
+        expected = [
+            {
+                "nomeDoProfessor": "Chris",
+                "horarioDeAtendimento": "19:30",
+                "periodo": "noturno",
+                "sala": "23",
+                "predio": "5"
+            },
+        ]
+
+        self.assertListEqual(actual, expected)
+
+        mock_api_data.assert_called_once()
+
+    @patch("app.src.render_web.get_data_from_api")
+    def test_should_get_right_building_for_classroom_equals_to_26(self, mock_api_data: MagicMock) -> None:
+        """
+        Method to assert the render_web function is setting the data correctly
+        by assigning the building value correctly.
+        """
+        fake_return = [
+            {
+                "nomeDoProfessor": "Chris",
+                "horarioDeAtendimento": "19:30",
+                "periodo": "noturno",
+                "sala": "26",
+                "predio": ["1", "2", "3", "4", "5", "6"]
+            },
+        ]
+
+        mock_api_data.return_value = fake_return
+
+        actual = render_web()
+        expected = [
+            {
+                "nomeDoProfessor": "Chris",
+                "horarioDeAtendimento": "19:30",
+                "periodo": "noturno",
+                "sala": "26",
+                "predio": "6"
+            },
+        ]
+
+        self.assertListEqual(actual, expected)
+
+        mock_api_data.assert_called_once()
+
     # BAD SCENARIOS
     @patch("app.src.render_web.get_data_from_api")
     def test_should_return_None_when_api_return_empty_list(self, mock_api_data: MagicMock) -> None:
