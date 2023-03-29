@@ -34,13 +34,13 @@ make tests
 Or if you can't run a `Makefile`, you can type either of the following commands from whithin the same directory this file is (i.e.: $<YOUR_PATH>/C-214_engenharia_software/exercicio_test_mock)
 
 ```
-python pytest
+python -m pytest
 ```
 
 or even
 
 ```
-python3 pytest
+python3 -m pytest
 ```
 
 and it should work.
