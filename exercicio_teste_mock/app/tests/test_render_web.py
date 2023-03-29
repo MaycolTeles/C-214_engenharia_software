@@ -5,7 +5,7 @@ Module containing the "TestRenderWeb" Class.
 from unittest import TestCase
 from unittest.mock import patch, MagicMock
 
-from app.src.render_web import render_web
+from src.render_web import render_web
 
 
 class TestRenderWeb(TestCase):
@@ -14,7 +14,7 @@ class TestRenderWeb(TestCase):
     """
 
     # GOOD SCENARIOS
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_return_formatted_data_for_single_professor_data(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is formatting the data correctly,
@@ -45,7 +45,7 @@ class TestRenderWeb(TestCase):
 
         mock_api_data.assert_called_once()
 
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_return_formatted_data_for_many_professor_data(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is formatting the data correctly,
@@ -106,7 +106,7 @@ class TestRenderWeb(TestCase):
 
         mock_api_data.assert_called_once()
 
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_get_right_building_for_classroom_equals_to_3(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is setting the data correctly
@@ -139,7 +139,7 @@ class TestRenderWeb(TestCase):
 
         mock_api_data.assert_called_once()
 
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_get_right_building_for_classroom_equals_to_6(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is setting the data correctly
@@ -172,7 +172,7 @@ class TestRenderWeb(TestCase):
 
         mock_api_data.assert_called_once()
 
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_get_right_building_for_classroom_equals_to_13(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is setting the data correctly
@@ -205,7 +205,7 @@ class TestRenderWeb(TestCase):
 
         mock_api_data.assert_called_once()
 
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_get_right_building_for_classroom_equals_to_16(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is setting the data correctly
@@ -238,7 +238,7 @@ class TestRenderWeb(TestCase):
 
         mock_api_data.assert_called_once()
 
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_get_right_building_for_classroom_equals_to_23(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is setting the data correctly
@@ -271,7 +271,7 @@ class TestRenderWeb(TestCase):
 
         mock_api_data.assert_called_once()
 
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_get_right_building_for_classroom_equals_to_26(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is setting the data correctly
@@ -305,7 +305,7 @@ class TestRenderWeb(TestCase):
         mock_api_data.assert_called_once()
 
     # BAD SCENARIOS
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_return_None_when_api_return_empty_list(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is returning None
@@ -319,7 +319,7 @@ class TestRenderWeb(TestCase):
         
         self.assertIsNone(actual)
 
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_return_None_when_api_return_missing_data(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is returning None
@@ -340,7 +340,7 @@ class TestRenderWeb(TestCase):
         
         self.assertIsNone(actual)
 
-    @patch("app.src.render_web.get_data_from_api")
+    @patch("src.render_web.get_data_from_api")
     def test_should_return_None_when_api_return_broken_data(self, mock_api_data: MagicMock) -> None:
         """
         Method to assert the render_web function is returning None

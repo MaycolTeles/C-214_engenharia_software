@@ -4,7 +4,7 @@ Module containing the "render_web" function.
 
 from typing import Dict, List, Optional
 
-from app.src.api import get_data_from_api
+from src.api import get_data_from_api
 
 
 def render_web() -> Optional[List[Dict[str, str]]]:
